@@ -420,7 +420,9 @@ public class DoubleTupleCollections
     }
 
     /**
-     * Normalize the given collection of {@link MutableDoubleTuple}s.<br>
+     * Normalize the given collection of {@link MutableDoubleTuple}s. That 
+     * is, all double values in all tuples will be in the bounds of 0.0 
+     * and 1.0.<br>
      * <br>
      * The results will be written into the given result tuples.
      * If the given results list is <code>null</code>, then a new
