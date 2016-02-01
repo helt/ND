@@ -1431,7 +1431,7 @@ public class DoubleTuples
      *
      * @param t The input tuple
      * @param result The tuple that will store the result
-     * @return The result tuple
+     * @return The result tuple. Each entry value will be between 0.0 and 1.0.
      * @throws IllegalArgumentException If the given tuples do not
      * have the same {@link Tuple#getSize() size}
      */
