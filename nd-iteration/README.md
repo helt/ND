@@ -12,7 +12,11 @@ dimension of the tuple that varies fastest. Also see [Wikipedia: Lexicographical
 #### Lexicographical order
 
 Given a tuple, the next tuple in **lexicographical** order is 
-computed by incrementing the _rightmost_ element.  
+computed by incrementing the _rightmost_ element.  In other words, range overflow 
+is much like it is known from normal integer number-space:
+
+           099 + 1 =      100 
+     (0, 9, 9) + 1 = (1, 0, 0)
 
 For example, the iteration over the range (0,0,0) to (2,2,3) in 
 **lexicographical** order is
@@ -48,10 +52,25 @@ The iteration over the range (-1,2,-1) to (1,4,2) in
 
 #### Colexicographical order
 
-Given an `IntTuple`, the next `IntTuple` in **colexicographical**` order 
-is computed by incrementing the _leftmost_ element.  
+Given an `IntTuple`, the next `IntTuple` in **colexicographical** order 
+is computed by incrementing the _leftmost_ element. In case an overflow 
+occurs, the next element to the right is incremented. In other words, 
+the resulting tuples of a colexicographic iterator are ordered ascending 
+from right to left.
 
-For example, the iteration over the range (0,0,0) to (2,2,3) in 
+          100 + 1 =      010
+    (1, 0, 0) + 1 = (0, 1, 0)
+
+and 
+
+           099 + 1 =      199 
+     (0, 9, 9) + 1 = (1, 9, 9)
+
+
+
+
+
+ For example, the iteration over the range (0,0,0) to (2,2,3) in 
 **colexicographical** order is
 
      (0, 0, 0)
